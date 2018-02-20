@@ -1,4 +1,4 @@
-from math import *
+import math
 
 i = 5
 j = 2 * i
@@ -14,9 +14,9 @@ print(9 // 5)
 print(9 % 5)
 print(3 ** 4)
 
-print(sqrt(36))
-print(log2(2))
-print(log2(4))
+print(math.sqrt(36))
+print(math.log2(2))
+print(math.log2(4))
 
 i = 5
 print(type(i))
