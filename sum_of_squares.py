@@ -1,3 +1,8 @@
+'''A positive integer m is a sum of squares if it can be written as k + l where k > 0, l > 0 and both k and l are perfect squares.
+
+Write a Python function sumofsquares(m) that takes an integer m returns True if m is a sum of squares and False otherwise. (If m is not positive, your function should return False.)'''
+
+
 def factors(n):
     flist = []
     for i in range(1, n + 1):
