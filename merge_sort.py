@@ -63,6 +63,7 @@ def merge(a, b):  # Merge a[0:m], b[0:n]
 a = list(range(0, 100, 2))
 b = list(range(1, 75, 2))
 print(merge(a, b))
+print('*' * 356)
 
 '''
 Merge Sort
