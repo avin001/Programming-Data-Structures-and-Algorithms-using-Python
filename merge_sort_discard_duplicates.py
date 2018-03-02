@@ -25,11 +25,9 @@ def merge(a, b):  # Merge a[0:m], b[0:n]
             c.append(b[j])
             j = j + 1
         elif a[i] == b[j]:  # Case 5: Head of a is equal to head of b
-            while a[i] == b[j]:
-                j = j + 1
+            j = j + 1
             c.append(a[i])
             i = i + 1
-
     return c
 
 
@@ -45,4 +43,5 @@ def mergesort(a, left, right):
 
 
 a = list(range(0, 20, 2)) + list(range(10, 30, 2))
+print(a)
 print(mergesort(a, 0, len(a)))
