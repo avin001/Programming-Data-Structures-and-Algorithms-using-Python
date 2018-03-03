@@ -19,7 +19,7 @@ Repeat until all elements in A and B are over
 Merge Sort
 
 Sort A[0:n//2]
-Sort a[n//2:n]
+Sort A[n//2:n]
 Merge sorted halves into B[0:n]
 How do we sort the halves?
 Recursively, using the same strategy!
