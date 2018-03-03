@@ -41,52 +41,52 @@ Repeat until all elements in A and B have been moved.
 '''
 
 
-def merge(a, b):  # Merge a[0:m], b[0:n]
-    (c, m, n) = ([], len(a), len(b))
+def merge(A, B):  # Merge a[0:m], b[0:n]
+    (C, m, n) = ([], len(A), len(B))
     (i, j) = (0, 0)  # Current positions in a, b
     while i + j < m + n:
-        if i == m:  # Case 1: a is empty
-            c.append(b[j])
+        if i == m:  # Case 1: A is empty
+            C.append(B[j])
             j = j + 1
-        elif j == n:  # Case 2: b is empty
-            c.append(a[i])
+        elif j == n:  # Case 2: B is empty
+            C.append(A[i])
             i = i + 1
-        elif a[i] <= b[j]:  # Case 3: Head of a is smaller
-            c.append(a[i])
+        elif A[i] <= B[j]:  # Case 3: Head of A is smaller
+            C.append(A[i])
             i = i + 1
-        elif a[i] > b[j]:  # Case 4: Head of b is smaller
-            c.append(b[j])
+        elif A[i] > B[j]:  # Case 4: Head of B is smaller
+            C.append(B[j])
             j = j + 1
-    return c
+    return C
 
 
-a = list(range(0, 100, 2))
-b = list(range(1, 75, 2))
-print(merge(a, b))
+A = list(range(0, 100, 2))
+B = list(range(1, 75, 2))
+print(merge(A, B))
 print('*' * 356)
 
 '''
 Merge Sort
 
-To sort a[0:n] into b[0:n]
+To sort A[0:n] into B[0:n]
 if n is 1, nothnig to be done
 Otherwise
 sort[0:n//2] into l(left)
 sort[n//2:n] into r(right)
-Merge l and r into b
+Merge l and r into B
 '''
 
 
-def mergesort(a, left, right):
-    # Sort the slice a[left:right]
+def mergesort(A, left, right):
+    # Sort the slice A[left:right]
     if right - left <= 1:  # Base case
-        return a[left:right]
+        return A[left:right]
     if right - left > 1:  # Recurisve call
         mid = (left + right) // 2
-        l = mergesort(a, left, mid)
-        r = mergesort(a, mid, right)
+        l = mergesort(A, left, mid)
+        r = mergesort(A, mid, right)
         return merge(l, r)
 
 
-a = list(range(1, 100, 2)) + list(range(0, 100, 2))
-print(mergesort(a, 0, len(a)))
+A = list(range(1, 100, 2)) + list(range(0, 100, 2))
+print(mergesort(A, 0, len(A)))

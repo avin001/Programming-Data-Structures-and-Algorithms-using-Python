@@ -3,36 +3,36 @@ Variation on merge
 
 Logic as below:
 Union of two sorted lists(discard duplicates i.e. keep a single copy)
-while a[i] == b[j], increment j
-append a[i] to c and increment i
+while A[i] == B[j], increment j
+append A[i] to C and increment i
 '''
 
 
-def merge(a, b):  # Merge a[0:m], b[0:n]
-    (c, m, n) = ([], len(a), len(b))
-    (i, j) = (0, 0)  # Current positions in a, b
+def merge(A, B):  # Merge a[0:m], b[0:n]
+    (C, m, n) = ([], len(A), len(B))
+    (i, j) = (0, 0)  # Current positions in A, B
     while i + j < m + n:
-        if i == m:  # Case 1: a is empty
-            c.append(b[j])
+        if i == m:  # Case 1: A is empty
+            C.append(B[j])
             j = j + 1
-        elif j == n:  # Case 2: b is empty
-            c.append(a[i])
+        elif j == n:  # Case 2: B is empty
+            C.append(A[i])
             i = i + 1
-        elif a[i] < b[j]:  # Case 3: Head of a is smaller
-            c.append(a[i])
+        elif A[i] < B[j]:  # Case 3: Head of A is smaller
+            C.append(A[i])
             i = i + 1
-        elif a[i] > b[j]:  # Case 4: Head of b is smaller
-            c.append(b[j])
+        elif A[i] > B[j]:  # Case 4: Head of B is smaller
+            C.append(B[j])
             j = j + 1
-        elif a[i] == b[j]:  # Case 5: Head of a is equal to head of b
+        elif A[i] == B[j]:  # Case 5: Head of A is equal to head of B
             j = j + 1
-            c.append(a[i])
+            C.append(A[i])
             i = i + 1
-    return c
+    return C
 
 
-a = list(range(0, 20, 2))
-b = list(range(10, 30, 2))
-print(a)
-print(b)
-print(merge(a, b))
+A = list(range(0, 20, 2))
+B = list(range(10, 30, 2))
+print(A)
+print(B)
+print(merge(A, B))
